@@ -1,0 +1,118 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+}
+.calculator{
+    width: min(360px, calc(100% - 32px));
+    margin: 30px auto;
+    position: relative;
+}
+.calculator_header{
+    position: relative;
+}
+h1{
+    text-align: center;
+    margin: 0 0 20px;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid black;
+    background: white;
+}
+td{
+    width: 25%;
+    height: 50px;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none;
+}
+td:hover{
+    background-color: #e7e7e7;
+}
+.output_screen td{
+    height: 70px;
+    padding: 0 12px;
+    text-align: right;
+    overflow: hidden;
+}
+.menu{
+    position: absolute;
+    top: -8px;
+    right: 0;
+}
+#menu_button{
+    border: 0;
+    background: transparent;
+    font-size: 24px;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+.menu_options{
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    width: 190px;
+    padding: 6px;
+    border: 1px solid #bbb;
+    background: white;
+    box-shadow: 0 3px 8px #0003;
+}
+.menu_options button,
+.mode_panel button{
+    display: block;
+    width: 100%;
+    padding: 9px;
+    border: 1px solid #bbb;
+    background: #f8f8f8;
+    cursor: pointer;
+}
+.menu_options button:hover,
+.mode_panel button:hover{
+    background: #e7e7e7;
+}
+.mode_panel{
+    margin-top: 16px;
+    padding: 14px;
+    border: 1px solid #bbb;
+    background: white;
+}
+.mode_panel h2{
+    margin: 0 0 12px;
+    font-size: 18px;
+}
+.scientific_buttons{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+}
+.conversion_controls{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 10px 0;
+}
+.conversion_controls input,
+.conversion_controls select,
+.mode_panel > label select{
+    min-width: 0;
+    padding: 7px;
+}
+.conversion_controls input{
+    width: 70px;
+}
+.mode_panel > label{
+    display: flex;
+    justify-content: space-between;
+}
+.conversion_result{
+    min-height: 20px;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+.help_text{
+    font-size: 12px;
+}

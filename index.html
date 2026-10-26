@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <main class="calculator">
+        <header class="calculator_header">
+            <h1><em>Calculator f-900x</em></h1>
+            <div class="menu">
+                <button id="menu_button" type="button" aria-expanded="false" aria-controls="menu_options">...</button>
+                <nav id="menu_options" class="menu_options" hidden>
+                    <button type="button" data-mode="scientific">Scientific Mode</button>
+                    <button type="button" data-mode="units">Unit Conversion</button>
+                    <button type="button" data-mode="currency">Currency Conversion</button>
+                </nav>
+            </div>
+        </header>
+
+        <table>
+            <tr class="output_screen">
+                <td colspan="4"></td>
+            </tr>
+            
+            <tr id="first_row">
+                <td>C</td>
+                <td>÷</td>
+                <td>X</td>
+                <td>⌫</td>
+            </tr>
+            
+            <tr id="2nd_row">
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>-</td>
+            </tr>
+
+            <tr id="3rd_row">
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>+</td>
+            </tr>
+
+            <tr id="4th_row">
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td rowspan="2">=</td>
+            </tr>
+
+            <tr id="5th_row">
+                <td>%</td>
+                <td>0</td>
+                <td>.</td>
+            </tr>
+        </table>
+
+        <section id="scientific_panel" class="mode_panel" hidden>
+            <h2>Scientific Mode</h2>
+            <div class="scientific_buttons">
+                <button type="button" data-scientific="sqrt">√x</button>
+                <button type="button" data-scientific="square">x²</button>
+                <button type="button" data-scientific="sin">sin</button>
+                <button type="button" data-scientific="cos">cos</button>
+                <button type="button" data-scientific="tan">tan</button>
+            </div>
+        </section>
+
+        <section id="units_panel" class="mode_panel" hidden>
+            <h2>Unit Conversion</h2>
+            <label>
+                Category
+                <select id="unit_category">
+                    <option value="length">Length</option>
+                    <option value="weight">Weight</option>
+                    <option value="temperature">Temperature</option>
+                </select>
+            </label>
+            <div class="conversion_controls">
+                <input id="unit_value" type="number" step="any" value="1">
+                <select id="unit_from"></select>
+                <span>to</span>
+                <select id="unit_to"></select>
+            </div>
+            <button id="convert_unit" type="button">Convert</button>
+            <p id="unit_result" class="conversion_result"></p>
+        </section>
+
+        <section id="currency_panel" class="mode_panel" hidden>
+            <h2>Currency Conversion</h2>
+            <p class="help_text">Uses the built-in rates below. Update them when rates change.</p>
+            <div class="conversion_controls">
+                <input id="currency_value" type="number" step="any" value="1">
+                <select id="currency_from">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="PKR">PKR</option>
+                    <option value="JPY">JPY</option>
+                </select>
+                <span>to</span>
+                <select id="currency_to">
+                    <option value="EUR">EUR</option>
+                    <option value="USD">USD</option>
+                    <option value="GBP">GBP</option>
+                    <option value="PKR">PKR</option>
+                    <option value="JPY">JPY</option>
+                </select>
+            </div>
+            <button id="convert_currency" type="button">Convert</button>
+            <p id="currency_result" class="conversion_result"></p>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
